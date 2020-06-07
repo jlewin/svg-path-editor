@@ -69,13 +69,14 @@
                         matTooltipPosition="right"
                     >AUTO</button>
                 </div>
-                <div class="row">
-                    <div class="input-block" style="flex-grow: 1;"
+                <div class="row snap-option" [ngClass]="{'active': snapToGrid }">
+                    <mat-checkbox [(ngModel)]="snapToGrid">Snap to Grid</mat-checkbox>
+                    <div class="input-block"
                         matTooltip="Number of decimals to keep when a point is dragged"
                         matTooltipPosition="right"
                     >
-                        <label>Decimals on mouse drag</label>
-                        <input [(ngModel)]="decimals" class="app-input">
+                        <label>Precision</label>
+                        <input [(ngModel)]="decimalPrecision" class="app-input">
                     </div>
                 </div>
                 <div class="row">
@@ -131,7 +132,7 @@
                         matTooltipPosition="right"
                     >Translate</button>
                 </div>
-                
+
                 <div class="row">
                     <div class="input-block" style="flex:2">
                         <label>Number of decimals</label>
